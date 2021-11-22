@@ -1,4 +1,5 @@
 #include <iostream>
+
 using namespace std;
 
 int main()
@@ -7,8 +8,7 @@ int main()
     cin >> arrLen;
     int arr[arrLen];
 
-    for (int i = 0; i < arrLen; i++)
-    {
+    for (int i = 0; i < arrLen; i++) {
         cin >> arr[i];
     }
 
@@ -16,11 +16,9 @@ int main()
     int right = arrLen - 1;
 
     // Move left pointer forward until next element is non-increasing
-    while (((left + 1) < arrLen) && (arr[left] < arr[left + 1]))
-        left++;
+    while (((left + 1) < arrLen) && (arr[left] < arr[left + 1])) left++;
     // Move right pointer backward until (reversed) next element is non-increasing
-    while (((right - 1) >= 0) && (arr[right] < arr[right - 1]))
-        right--;
+    while (((right - 1) >= 0) && (arr[right] < arr[right - 1])) right--;
     // Number of moves possible taking from left
     left++;
     // Number of moves possible taking from right

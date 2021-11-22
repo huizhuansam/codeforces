@@ -1,13 +1,13 @@
 #include <iostream>
+
 using namespace std;
 
 int main()
 {
-    int testcases;
-    cin >> testcases;
+    int t;
+    cin >> t;
 
-    for (int i = 0; i < testcases; i++)
-    {
+    while (t--) {
         int n, m, k;
         cin >> n;
         cin >> m;
