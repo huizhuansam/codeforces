@@ -3,10 +3,6 @@
 
 using namespace std;
 
-int dist(int a, int b, int x, int y) {
-    return abs(a - x) + abs(b - y);
-}
-
 int main()
 {
     int t, x, y, d, a, b;
