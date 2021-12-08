@@ -4,14 +4,11 @@ using namespace std;
 
 int main()
 {
-    int t;
+    int t, n, m, k;
     cin >> t;
 
     while (t--) {
-        int n, m, k;
-        cin >> n;
-        cin >> m;
-        cin >> k;
+        cin >> n >> m >> k;
         (n * m) - 1 == k ? cout << "YES\n" : cout << "NO\n";
     }
 
