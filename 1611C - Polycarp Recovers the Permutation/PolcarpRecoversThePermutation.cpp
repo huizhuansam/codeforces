@@ -2,19 +2,19 @@
 
 using namespace std;
 
-void print_deque(deque<int> dq, int n) {
+void print_deque(deque<int> dq) {
     for (int i : dq) cout << i << " ";
 }
 
-bool is_largest(vector<int> v, int l, int n) {
+bool is_largest(vector<int> v, int n) {
     for (int i : v) if (n < i) return false;
     return true;
 }
 
-void solve(vector<int> v, bool first, int len) {
+void solve(vector<int> v, bool first, int n) {
     deque<int> dq;
     int l = 0;
-    int r = len - 1;
+    int r = n - 1;
     if (first) {
         dq.push_back(v[l]);
         l++;
@@ -33,19 +33,15 @@ void solve(vector<int> v, bool first, int len) {
         }
     }
 
-    print_deque(dq, len);
+    print_deque(dq);
 }
 
-void solve(vector<int> v, int l) {
+void solve(vector<int> v, int n) {
     int first = v[0];
-    int last = v[l - 1];
-    if (is_largest(v, l, first)) {
-        solve(v, true, l);
-    } else if (is_largest(v, l, last)) {
-        solve(v, false, l);
-    } else {
-        cout << -1;
-    }
+    int last = v[n - 1];
+    if (is_largest(v, first)) solve(v, true, n);
+    else if (is_largest(v, last)) solve(v, false, n);
+    else cout << -1;
 }
 
 int main()
